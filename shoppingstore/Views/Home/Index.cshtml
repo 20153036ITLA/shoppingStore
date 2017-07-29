@@ -1,0 +1,20 @@
+﻿@model INumerable<shoppingstore.Models.Item>;
+
+@{
+    ViewBag.Title = "Home Page";
+}
+
+@{ ViewBag.Title = "Shopping Store";}
+
+<ul id="item-list">
+
+    @foreach (var item in Model)
+    {
+        <li>
+            <a href="@Url.Action("Details", "Store", new {id = item.ItemId })">
+            <img alt="@item.Title" src="@item.ItemArtUrl" />
+            <span>@item.Title</span></a>
+        </li>
+    }
+    
+</ul>
